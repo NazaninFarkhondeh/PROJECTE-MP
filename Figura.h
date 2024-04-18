@@ -1,6 +1,8 @@
 #ifndef FIGURA_H
 #define FIGURA_H
 
+#include "Tauler.h"
+
 typedef enum
 {
     COLOR_NEGRE = 0,
@@ -38,6 +40,27 @@ typedef enum
 
 class Figura
 {
+public:
+    Figura(); // Constructor por defecto
+
+    // Métodos para mover la figura
+    void moureDreta();
+    void moureEsquerra();
+    void moureAvall();
+    void girarHorari();
+    void girarAntihorari();
+
+    // Método para mostrar la figura en el tablero
+    void mostrarEnTablero(Tauler& tauler);
+
+    // Método para comprobar si el movimiento es válido
+    bool esMovimentValid(Tauler& tauler);
+
+private:
+    int fila;
+    int columna;
+    std::vector<std::vector<char>> forma;
+    Tauler tauler; // Definir una instancia de la clase Tauler
 };
 
 
