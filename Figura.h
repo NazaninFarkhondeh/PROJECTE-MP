@@ -1,5 +1,7 @@
 #ifndef FIGURA_H
 #define FIGURA_H
+#include <vector>
+using namespace std;
 
 #include "Tauler.h"
 
@@ -38,6 +40,8 @@ typedef enum
     GIR_ANTI_HORARI
 } DireccioGir;
 
+class Tauler; // Declaración anticipada de la clase Tauler
+
 class Figura
 {
 public:
@@ -60,7 +64,7 @@ private:
     int fila;
     int columna;
     std::vector<std::vector<char>> forma;
-    Tauler tauler; // Definir una instancia de la clase Tauler
+   Tauler* tauler; // Usamos un puntero a Tauler en lugar de una instancia
 };
 
 
