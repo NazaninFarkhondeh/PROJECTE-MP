@@ -1,5 +1,6 @@
 #include "Tauler.h"
 #include <iostream>
+#include <fstream>
 
 Tauler::Tauler() {
     caselles.resize(MAX_FILA, std::vector<char>(MAX_COL, ' '));
@@ -36,3 +37,4 @@ void Tauler::escriuTauler(const std::string& nomFitxer) {
     } else {
         std::cout << "No s'ha pogut obrir el fitxer per escriure." << std::endl;
     }
+}
