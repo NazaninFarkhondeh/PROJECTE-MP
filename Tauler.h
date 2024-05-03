@@ -19,6 +19,9 @@ public:
     void setCasella(int fila, int columna, char valor); // Método para establecer el valor de una casilla
     bool casellaOcupada(int fila, int columna) const; // Verificar si una casilla está ocupada
     void escriuTauler(const std::string& nomFitxer); // Declaración de la función escriuTauler
-    
+    int eliminarFilesCompletades();
+    void eliminarFila(int fila);
+    void desplazarFilasSuperiores(int fila);
+  
 };
 #endif
