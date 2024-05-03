@@ -38,3 +38,25 @@ void Tauler::escriuTauler(const std::string& nomFitxer) {
         std::cout << "No s'ha pogut obrir el fitxer per escriure." << std::endl;
     }
 }
+
+int Tauler::eliminarFilesCompletades() {
+    int lineasCompletadas = 0;
+    for (int fila = MAX_FILA - 1; fila >= 0; --fila) {
+        bool filaCompleta = true;
+        for (int columna = 0; columna < MAX_COL; ++columna) {
+            if (!casellaOcupada(fila, columna)) {
+                filaCompleta = false;
+                break;
+            }
+        }
+        if (filaCompleta) {
+            eliminarFila(fila); // Eliminar la fila completada
+            ++lineasCompletadas;
+            // Desplazar hacia abajo las filas superiores
+            desplazarFilasSuperiores(fila);
+            // Reiniciar el ciclo para revisar la fila actual nuevamente
+            ++fila;
+        }
+    }
+    return lineasCompletadas;
+}
