@@ -56,4 +56,3 @@ void Joc::escriuTauler(const std::string& nomFitxer) {
     // Escribir el estado del tablero
     tauler.escriuTauler(nomFitxer);
 }
-
