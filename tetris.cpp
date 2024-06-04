@@ -17,10 +17,6 @@ Tetris::Tetris() {
 
 
 void Tetris::juga() {
-   #include <iostream>
-#include <string>
-#include "Joc.h"
-
     Joc joc;
     std::string nomFitxer;
     int opcio;
