@@ -64,7 +64,7 @@ private:
     int fila;
     int columna;
     std::vector<std::vector<char>> forma;
-   Tauler* tauler; // Usamos un puntero a Tauler en lugar de una instancia
+    Tauler* tauler; // Usamos un puntero a Tauler en lugar de una instancia
 };
 
 
