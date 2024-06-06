@@ -14,11 +14,11 @@ public:
 	bool mouFigura(int dirX);
 	int baixaFigura();
 	void escriuTauler(const string& nomFitxer);
-   
+
 
 private:
-Figura figura;
-Tauler tauler; // Declaración de tauler como variable miembro
+	Figura figura;
+	Tauler tauler; // Declaración de tauler como variable miembro
 };
 
 #endif
