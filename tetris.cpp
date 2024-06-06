@@ -19,7 +19,7 @@ Tetris::Tetris() {
 void Tetris::juga() {
     Joc joc;
     std::string nomFitxer;
-    int opcio;
+    int opcio,puntuacions;
     bool exit = false;
 
     while (!exit) {
@@ -35,57 +35,60 @@ void Tetris::juga() {
         std::cin >> opcio;
 
         switch (opcio) {
-            case 1:
-                std::cout << "Introdueix el nom del fitxer per inicialitzar el joc: ";
-                std::cin >> nomFitxer;
-                joc.inicialitza(nomFitxer);
-                std::cout << "Joc inicialitzat." << std::endl;
-                break;
-            case 2:
-                std::cout << "Girar figura (0: Horari, 1: Antihorari): ";
-                int direccio;
-                std::cin >> direccio;
-                if (joc.giraFigura(static_cast<DireccioGir>(direccio))) {
-                    std::cout << "Figura girada correctament." << std::endl;
-                } else {
-                    std::cout << "No s'ha pogut girar la figura." << std::endl;
-                }
-                break;
-            case 3:
-                if (joc.mouFigura(-1)) {
-                    std::cout << "Figura moguda a l'esquerra correctament." << std::endl;
-                } else {
-                    std::cout << "No s'ha pogut moure la figura a l'esquerra." << std::endl;
-                }
-                break;
-            case 4:
-                if (joc.mouFigura(1)) {
-                    std::cout << "Figura moguda a la dreta correctament." << std::endl;
-                } else {
-                    std::cout << "No s'ha pogut moure la figura a la dreta." << std::endl;
-                }
-                break;
-            case 5:
-                int lineasCompletades;
-                lineasCompletades = joc.baixaFigura();
-                std::cout << "Figura baixada. " << lineasCompletades << " files completades." << std::endl;
-                break;
-            case 6:
-                std::cout << "Introdueix el nom del fitxer per escriure el tauler: ";
-                std::cin >> nomFitxer;
-                joc.escriuTauler(nomFitxer);
-                std::cout << "Tauler escrit a fitxer." << std::endl;
-                break;
-            case 7:
-                exit = true;
-                std::cout << "Sortint del joc..." << std::endl;
-                break;
-            default:
-                std::cout << "Opcio invalida. Si us plau, tria una opcio valida." << std::endl;
-                break;
+        case 1:
+            std::cout << "Introdueix el nom del fitxer per inicialitzar el joc: ";
+            std::cin >> nomFitxer;
+            joc.inicialitza(nomFitxer);
+            std::cout << "Joc inicialitzat." << std::endl;
+            break;
+        case 2:
+            std::cout << "Girar figura (0: Horari, 1: Antihorari): ";
+            int direccio;
+            std::cin >> direccio;
+            if (joc.giraFigura(static_cast<DireccioGir>(direccio))) {
+                std::cout << "Figura girada correctament." << std::endl;
+            }
+            else {
+                std::cout << "No s'ha pogut girar la figura." << std::endl;
+            }
+            break;
+        case 3:
+            if (joc.mouFigura(-1)) {
+                std::cout << "Figura moguda a l'esquerra correctament." << std::endl;
+            }
+            else {
+                std::cout << "No s'ha pogut moure la figura a l'esquerra." << std::endl;
+            }
+            break;
+        case 4:
+            if (joc.mouFigura(1)) {
+                std::cout << "Figura moguda a la dreta correctament." << std::endl;
+            }
+            else {
+                std::cout << "No s'ha pogut moure la figura a la dreta." << std::endl;
+            }
+            break;
+        case 5:
+            int lineasCompletades;
+            lineasCompletades = joc.baixaFigura();
+            std::cout << "Figura baixada. " << lineasCompletades << " files completades." << std::endl;
+            break;
+        case 6:
+            std::cout << "Introdueix el nom del fitxer per escriure el tauler: ";
+            std::cin >> nomFitxer;
+            joc.escriuTauler(nomFitxer);
+            std::cout << "Tauler escrit a fitxer." << std::endl;
+            break;
+        case 7:
+            exit = true;
+            std::cout << "Sortint del joc..." << std::endl;
+            break;
+        default:
+            std::cout << "Opcio invalida. Si us plau, tria una opcio valida." << std::endl;
+            break;
         }
     }
-    
+
 }
 
 void Tetris::mostraPuntuacions() {
