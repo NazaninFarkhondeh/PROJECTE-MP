@@ -1,6 +1,8 @@
 #include <string>
 #include "Joc.h"
 #include "InfoJoc.h"
+#include<list>
+
 using namespace std;
 
 class Partida {
